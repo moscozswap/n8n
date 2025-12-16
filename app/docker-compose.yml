@@ -15,6 +15,7 @@ services:
       # N8N Config
       - N8N_HOST=${N8N_HOSTNAME}
       - N8N_PROTOCOL=https
+      - N8N_TRUST_PROXY=true
       - WEBHOOK_URL=https://${N8N_HOSTNAME}/
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
@@ -22,6 +23,7 @@ services:
       - VIRTUAL_HOST=${N8N_HOSTNAME}
       - VIRTUAL_PORT=5678
       - LETSENCRYPT_HOST=${N8N_HOSTNAME}
+      - HTTPS_METHOD=noredirect
     expose:
       - 5678
     volumes:
